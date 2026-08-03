@@ -1,0 +1,22 @@
+﻿@model Site.Views.Shared.Components.UserButtonViewComponent.Model
+
+<div class="dropdown">
+    <a class="avatar avatar-sm p-0" href="#" data-bs-toggle="dropdown" area-expanded="false">
+        <img src="@Model.Avatar" alt="Avatar Alt image" class="avatar-img rounded-circle">
+    </a>
+    <div class="dropdown-menu dropdown-menu-end pt-0">
+        <div class="card border-0">
+            <div class="card-body">
+                <span class="card-title">@Model.Username</span>
+            </div>
+        </div>
+        <div class="dropdown-divider mt-0"></div>
+        @foreach (var x in Model.Organizations)
+        {
+            <a class="dropdown-item">@x</a>
+        }
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="https://wise-dassie-17.accounts.dev/user" target="_blank">Profile</a>
+        <a class="dropdown-item" href="@Model.LogoutUrl">Sign-out</a>
+    </div>
+</div>
